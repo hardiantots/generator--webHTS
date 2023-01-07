@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <header class="header__mobile">
+        <span class="header__title">GENERATOR WEB</span>
+        <button class="header__button">
+            <div class="line__bar"></div>
+        </button>
+    </header>
+    <nav class="mobile__navbar">
+        <ul>
+            <li class="active" data-id="1"><a href="#boxshadow">Box Shadow</a></li>
+            <li data-id="2"><a href="#neuromorphism">Neuromorphism</a></li>
+            <li data-id="3"><a href="#colorp">Color Pallete</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="sec__boxshadow tabcontent active" id="boxshadow" data-content="1">
+            <div class="view__container">
+                <div id="shadow__view"></div>
+            </div>
+            <div class="settings__shadow">
+                <div class="slider__wrapper">
+                    <label for="horizontal__shadow">Horizontal Shadow : </label>
+                    <div class="about__input">
+                        <input type="range" id="horizontal__shadow" max="100" min="-100" value="0">
+                        <textarea rows="1" readonly id="number__horizontal"></textarea>
+                    </div>
+                </div>
+                <div class="slider__wrapper">
+                    <label for="blur__radius">Blur Radius : </label>
+                    <div class="about__input">
+                        <input type="range" id="blur__radius" max="100" min="0" value="0">
+                        <textarea rows="1" readonly id="number__blur"></textarea>
+                    </div>
+                </div>
+                <div class="slider__wrapper">
+                    <label for="vertical__shadow">Vertical Shadow : </label>
+                    <div class="about__input">
+                        <input type="range" id="vertical__shadow" max="100" min="-100" value="0">
+                        <textarea rows="1" readonly id="number__vertical"></textarea>
+                    </div>
+                </div>
+                <div class="slider__wrapper">
+                    <label for="spread__radius">Spread Radius : </label>
+                    <div class="about__input">
+                        <input type="range" id="spread__radius" max="50" min="-50" value="0">
+                        <textarea rows="1" readonly id="number__spread"></textarea>
+                    </div>
+                </div>
+                <div class="slider__wrapper">
+                    <label for="shadow__color">Shadow Color : </label>
+                    <div class="about__input">
+                        <input type="color" id="shadow__color">
+                        <textarea rows="1" readonly id="number__color"></textarea>
+                    </div>
+                </div>
+                <div class="slider__wrapper">
+                    <label for="shadow__opacity">Shadow Color Opacity : </label>
+                    <div class="about__input">
+                        <input type="range" id="shadow__opacity" max="1" min="0" step="0.1" value="1">
+                        <textarea rows="1" readonly id="number__opacity"></textarea>
+                    </div>
+                </div>
+                <div class="inset__wrapper">
+                    <label for="inset__shadow">Inset Shadow</label>
+                    <input type="checkbox" id="inset__shadow">
+                </div>
+                <div class="codeview__wrapper">
+                    <textarea rows="2" id="text__code"></textarea>
+                    <button onclick="copyCode()">Copy</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="sec__neuromorphism tabcontent" id="neuromorphism" data-content="2">
+            <div id="viewneuro__container">
+                <div id="shape__view"></div>
+            </div>
+            <div class="settings__neuro">
+                <div class="slider__wrapper">
+                    <label for="size__shape">Size : </label>
+                    <div class="about__input">
+                        <input type="range" id="size__shape" min="10" max="180" value="80">
+                        <textarea rows="1" readonly id="number__size"></textarea>
+                    </div>
+                </div>
+                <div class="slider__wrapper">
+                    <label for="radius__shape">Radius : </label>
+                    <div class="about__input">
+                        <input type="range" id="radius__shape" min="0" max="50" value="30">
+                        <textarea rows="1" readonly id="number__radius"></textarea>
+                    </div>
+                </div>
+                <div class="slider__wrapper">
+                    <label for="distance__shadow">Distance Shadow : </label>
+                    <div class="about__input">
+                        <input type="range" id="distance__shadow" min="0" max="50" value="20">
+                        <textarea rows="1" readonly id="number__distance"></textarea>
+                    </div>
+                </div>
+                <div class="slider__wrapper">
+                    <label for="blur__shadow">Blur : </label>
+                    <div class="about__input">
+                        <input type="range" id="blur__shadow" min="0" max="100" value="30">
+                        <textarea rows="1" readonly id="number__blur2"></textarea>
+                    </div>
+                </div>
+                <div class="slider__wrapper">
+                    <label for="color__shape">Color : </label>
+                    <div class="about__input">
+                        <input type="color" id="color__shape" value="#0A2647">
+                        <textarea rows="1" readonly id="number__color2"></textarea>
+                    </div>
+                </div>
+                <div class="codeview__wrapper">
+                    <div id="text__code__neuro"></div>
+                    <button onclick="copyCodeNeuro('text__code__neuro')">Copy</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec__colorpallete tabcontent" id="colorp" data-content="3">
+            <span class="title__generator">Color Pallete</span>
+            <div class="color__output">
+                <div>
+                    <p class="hex__color">#1234</p>
+                    <div class="color__view"></div>
+                </div>
+                <div>
+                    <p class="hex__color">#1234</p>
+                    <div class="color__view"></div>
+                </div>
+                <div>
+                    <p class="hex__color">#1234</p>
+                    <div class="color__view"></div>
+                </div>
+                <div>
+                    <p class="hex__color">#1234</p>
+                    <div class="color__view"></div>
+                </div>
+            </div>
+            <button class="color__button">Generate Random Colors</button>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./script/shadow.js"></script>
+    <script src="./script/color.js"></script>
+    <script src="./script/main.js"></script>
+</body>
+</html>
